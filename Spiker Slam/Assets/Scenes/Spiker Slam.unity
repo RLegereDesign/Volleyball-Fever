@@ -197,7 +197,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327620859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.64, z: -5}
+  m_LocalPosition: {x: -12, y: -6.64, z: -5}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 77632111}
@@ -522,6 +522,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.09, y: 1.2}
   m_EdgeRadius: 0
+--- !u!1 &1428552767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1428552768}
+  m_Layer: 0
+  m_Name: Ball
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1428552768
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428552767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778299407
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +579,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778299407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df57e86b1c5e940a2b71ff61ccb7211f, type: 3}
+  m_Script: {fileID: 11500000, guid: bf07a4a65b115b941928d4d33342944b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
@@ -688,7 +716,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778299407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -6.64, z: -5}
+  m_LocalPosition: {x: 12, y: -6.64, z: -5}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 255122108}

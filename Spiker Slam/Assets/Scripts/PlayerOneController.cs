@@ -34,7 +34,7 @@ public class PlayerOneController : MonoBehaviour
 		anim.SetFloat ("vSpeed", rb2d.velocity.y);
 
 
-		float move = Input.GetAxis ("Horizontal");
+		float move = Input.GetAxis ("HorizontalP1");
 
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
@@ -51,7 +51,7 @@ public class PlayerOneController : MonoBehaviour
 
 	void Update ()
 	{
-		if (grounded && Input.GetButtonDown ("Jump")) //Make GetButton instead in the future
+		if (grounded && Input.GetButtonDown ("JumpP1")) //Make GetButton instead in the future
 		{ 
 			anim.SetBool ("Ground", false);
 			rb2d.AddForce (new Vector2(0, jumpForce));
