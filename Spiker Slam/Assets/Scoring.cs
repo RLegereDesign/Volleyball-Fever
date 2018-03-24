@@ -16,17 +16,17 @@ public class Scoring : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		scoreDisplay.text = "Score: 0";
+		scoreDisplay.text = "Score: " + score;
 		
 	}
 	
 	// Update is called once per frame
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Ball")
+		if (other.tag == "Ball" && ballCheck == true)
 		{
-			score++;
-			scoreDisplay.text = ("Score: "+score);
+			score = score + 1;
+			scoreDisplay.text = ("Score: " + score);
 			StartCoroutine (SpawnServe ());
 			StopCoroutine (SpawnServe ());
 			Destroy (other.gameObject);
