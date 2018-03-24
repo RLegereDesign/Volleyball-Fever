@@ -9,6 +9,9 @@ public class PlayerOneController : MonoBehaviour
 	bool facingRight = false;
 	private Rigidbody2D rb2d;
 
+	public GameObject Ball;
+	public Rigidbody2D rb2dball;
+
 	Animator anim;
 
 	bool grounded = false;
@@ -17,18 +20,31 @@ public class PlayerOneController : MonoBehaviour
 	public LayerMask whatIsGround;
 	public float jumpForce = 700f;
 
+
+	bool ballTouched = false;
+	public LayerMask whatIsBall;
+	public Transform ballCheck;
+	float ballRadius = 1.0f;
+
+	private float lastTouched = 0;
+
 	// Use this for initialization
 	void Start () 
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
 
 		anim = GetComponent<Animator>();
+
+		rb2dball = Ball.GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+
+		ballTouched = Physics2D.OverlapCircle (ballCheck.position, ballRadius, whatIsBall);
+
 		anim.SetBool ("Ground", grounded);
 
 		anim.SetFloat ("vSpeed", rb2d.velocity.y);
@@ -43,11 +59,24 @@ public class PlayerOneController : MonoBehaviour
 		if (move > 0 && !facingRight) 
 		{
 			Flip ();
-		} else if (move < 0 && facingRight) 
+		} 
+		else if (move < 0 && facingRight) 
 		{
 			Flip ();
 		}
+		if (ballTouched) 
+		{
+			lastTouched += 1;
+			if (lastTouched == 3) 
+			{
+				rb2dball.AddForce (new Vector2 (250f, 600f));
+				lastTouched = 0;
+			}
+					
+		}
 	}
+		
+	
 
 	void Update ()
 	{
@@ -65,4 +94,7 @@ public class PlayerOneController : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+
+
 }
