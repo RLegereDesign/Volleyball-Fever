@@ -42,7 +42,7 @@ public class Scoring : MonoBehaviour {
 		yield return new WaitForSeconds (2);
 
 		if (ballCheck == false) {
-			Vector3 Spawn = new Vector3 (xAx, yAx, 0.0f);
+			Vector3 Spawn = new Vector3 (xAx, yAx, -1f);
 			Quaternion spawnRotation = Quaternion.identity;
 			Instantiate (Ball, Spawn, spawnRotation);
 			ballCheck = true;
